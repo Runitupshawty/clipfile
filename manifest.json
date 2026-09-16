@@ -1,0 +1,9 @@
+{
+  "id": "clipfile",
+  "name": "Copy File to Clipboard",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Puts the actual file on the clipboard, so it pastes into Gmail or any other app as a real attachment instead of a link. macOS and Windows.",
+  "author": "James King",
+  "isDesktopOnly": true
+}
