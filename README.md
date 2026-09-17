@@ -51,7 +51,7 @@ quotes for the PowerShell string literal.
 
 ## Install
 
-Not in the community plugin directory (yet). To install by hand:
+While the community-directory submission is under review, install it by hand:
 
 1. Download `main.js` and `manifest.json` from the latest release.
 2. Put them in `<your vault>/.obsidian/plugins/clipfile/`.
