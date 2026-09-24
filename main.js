@@ -28,8 +28,9 @@ function clipboardCommand(absPath) {
     // -EncodedCommand (base64 UTF-16LE) instead of as a quoted argv string,
     // so spaces, &, [, ], and unicode in the filename never need shell/argv
     // escaping -- only the PowerShell single-quote literal below needs its
-    // quotes doubled.
-    const psPath = absPath.replace(/'/g, "''");
+    // quotes doubled. PowerShell also treats the curly quotes U+2018-U+201B
+    // as single quotes, so "James’s file.pdf" would end the literal early.
+    const psPath = absPath.replace(/['‘’‚‛]/g, "$&$&");
     const script = `Set-Clipboard -LiteralPath '${psPath}'`;
     const encoded = Buffer.from(script, "utf16le").toString("base64");
     return {
